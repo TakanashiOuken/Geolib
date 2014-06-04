@@ -892,12 +892,14 @@
 
 				var d = this.getDistance(latlng, coords[coord]);
 
-				// coordsArray.push({
-				// 	key: coord, 
-				// 	latitude: this.latitude(coords[coord]), 
-				// 	longitude: this.longitude(coords[coord]), 
-				// 	distance: d
-				// });
+				var coord_location = 
+				{
+					"latitude": coords[coord].latitude,
+					"longitude": coords[coord].longitude
+				};
+
+				var d = this.getDistance(latlng, coord_location);
+
 				coords[coord].distance = d;
 				coordsArray.push(coords[coord]);
 			}
